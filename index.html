@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodFootball — Футбольний магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="#" class="logo">⚽ GOOD<span>FOOTBALL</span></a>
+
+    <nav>
+        <a href="#home">Головна</a>
+        <a href="#categories">Категорії</a>
+        <a href="#products">Товари</a>
+        <a href="#about">Про нас</a>
+        <a href="#contacts">Контакти</a>
+    </nav>
+
+    <div class="header-actions">
+        <input type="text" id="search" placeholder="Пошук товарів...">
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Кошик <span id="cart-count">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="hero-label">ЛАСКАВО ПРОСИМО ДО GOODFOOTBALL</span>
+        <h1>ТВІЙ ФУТБОЛ.<br><span>ТВОЇ ПРАВИЛА.</span></h1>
+        <p>Відкрий світ футболу разом із нами. Найкраща екіпіровка, форма та аксесуари для справжніх чемпіонів!</p>
+        <a href="#products" class="hero-btn">ПЕРЕЙТИ ДО МАГАЗИНУ →</a>
+    </div>
+
+    <div class="hero-decoration">
+        <div class="big-ball">⚽</div>
+        <div class="hero-circle"></div>
+    </div>
+
+    <div class="hero-bottom">
+        <span>PLAY YOUR GAME</span>
+        <span>EST. 2026</span>
+    </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages">
+    <div>🚚 <span><b>Швидка доставка</b><small>По всій Україні</small></span></div>
+    <div>⭐ <span><b>Висока якість</b><small>Перевірені товари</small></span></div>
+    <div>💳 <span><b>Зручна оплата</b><small>Безпечні покупки</small></span></div>
+    <div>🎯 <span><b>Великий вибір</b><small>Для кожного гравця</small></span></div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories section" id="categories">
+    <div class="section-heading">
+        <div>
+            <span class="small-title">ОБИРАЙ СВОЄ</span>
+            <h2>НАШІ КАТЕГОРІЇ</h2>
+        </div>
+        <p>Усе необхідне для твоєї гри<br>в одному місці.</p>
+    </div>
+
+    <div class="category-grid">
+        <div class="category-card" onclick="filterCategory('Форма')">
+            <div class="category-icon">👕</div>
+            <h3>Футбольна форма</h3>
+            <span>ПЕРЕГЛЯНУТИ →</span>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('М'+'ячі')">
+            <div class="category-icon">⚽</div>
+            <h3>Футбольні м'ячі</h3>
+            <span>ПЕРЕГЛЯНУТИ →</span>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Взуття')">
+            <div class="category-icon">👟</div>
+            <h3>Футбольне взуття</h3>
+            <span>ПЕРЕГЛЯНУТИ →</span>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Аксесуари')">
+            <div class="category-icon">🧤</div>
+            <h3>Аксесуари</h3>
+            <span>ПЕРЕГЛЯНУТИ →</span>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section section" id="products">
+    <div class="section-heading">
+        <div>
+            <span class="small-title">ТОПОВІ ПРОПОЗИЦІЇ</span>
+            <h2>ПОПУЛЯРНІ ТОВАРИ</h2>
+        </div>
+        <button class="all-btn" onclick="showAll()">Усі товари →</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+
+        <article class="product-card" data-category="Форма">
+            <div class="product-image blue">👕<span class="sale">ХІТ</span></div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНА ФОРМА</small>
+                <h3>Футболка Football Pro</h3>
+                <div class="price">899 грн</div>
+                <button onclick="addToCart('Футболка Football Pro',899)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="М'ячі">
+            <div class="product-image light">⚽<span class="sale">ТОП</span></div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНІ М'ЯЧІ</small>
+                <h3>Football Match Ball</h3>
+                <div class="price">1299 грн</div>
+                <button onclick="addToCart('Football Match Ball',1299)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Взуття">
+            <div class="product-image dark">👟</div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНЕ ВЗУТТЯ</small>
+                <h3>Speed Boots X</h3>
+                <div class="price">2199 грн</div>
+                <button onclick="addToCart('Speed Boots X',2199)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Аксесуари">
+            <div class="product-image green">🧤</div>
+            <div class="product-info">
+                <small>АКСЕСУАРИ</small>
+                <h3>Goalkeeper Gloves</h3>
+                <div class="price">799 грн</div>
+                <button onclick="addToCart('Goalkeeper Gloves',799)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Форма">
+            <div class="product-image light">🩳</div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНА ФОРМА</small>
+                <h3>Football Shorts</h3>
+                <div class="price">499 грн</div>
+                <button onclick="addToCart('Football Shorts',499)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Аксесуари">
+            <div class="product-image blue">🧦</div>
+            <div class="product-info">
+                <small>АКСЕСУАРИ</small>
+                <h3>Football Socks</h3>
+                <div class="price">249 грн</div>
+                <button onclick="addToCart('Football Socks',249)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="М'ячі">
+            <div class="product-image green">⚽</div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНІ М'ЯЧІ</small>
+                <h3>Training Ball</h3>
+                <div class="price">699 грн</div>
+                <button onclick="addToCart('Training Ball',699)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Взуття">
+            <div class="product-image dark">👟</div>
+            <div class="product-info">
+                <small>ФУТБОЛЬНЕ ВЗУТТЯ</small>
+                <h3>Pro Football Boots</h3>
+                <div class="price">2499 грн</div>
+                <button onclick="addToCart('Pro Football Boots',2499)">ДОДАТИ ДО КОШИКА +</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- BANNER -->
+<section class="promo">
+    <div>
+        <span>ТВІЙ ЧАС ПЕРЕМАГАТИ</span>
+        <h2>ГРА ПОЧИНАЄТЬСЯ ТУТ.</h2>
+        <p>Обирай екіпіровку та виходь на поле!</p>
+        <a href="#products">КУПИТИ ЗАРАЗ →</a>
+    </div>
+    <div class="promo-ball">⚽</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section" id="about">
+    <span class="small-title">НАША ІСТОРІЯ</span>
+    <h2>БІЛЬШЕ, НІЖ ПРОСТО ФУТБОЛ</h2>
+    <p>GoodFootball — це магазин для тих, хто любить футбол. Ми прагнемо зробити якісну футбольну екіпіровку доступною для кожного.</p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacts">
+    <div class="footer-logo">⚽ GOOD<span>FOOTBALL</span></div>
+    <p>Твій футбольний світ починається тут!</p>
+
+    <div class="footer-links">
+        <a href="#home">Головна</a>
+        <a href="#categories">Категорії</a>
+        <a href="#products">Магазин</a>
+        <a href="#about">Про нас</a>
+    </div>
+
+    <div class="copyright">© 2026 GoodFootball. Усі права захищені.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
