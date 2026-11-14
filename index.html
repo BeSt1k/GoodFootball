@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -25,7 +24,19 @@
         <input type="text" id="search" placeholder="Пошук товарів...">
         <button class="cart-btn" onclick="showCart()">
             🛒 Кошик <span id="cart-count">0</span>
+
         </button>
+         
+         <script>
+        function clearCart() {
+            if (confirm("Ви дійсно хочете видалити всі товари з кошика?")) {
+                localStorage.removeItem("cart");
+                alert("Кошик очищено!");
+                location.reload();
+            }
+        }
+    </script>
+
     </div>
 </header>
 
@@ -51,7 +62,7 @@
 
 <!-- ADVANTAGES -->
 <section class="advantages">
-    <div>🚚 <span><b>Швидка доставка</b><small>По всій Україні</small></span></div>
+    <div>🚚 <span><b>Швидка доставка</b><small>По всьому світу</small></span></div>
     <div>⭐ <span><b>Висока якість</b><small>Перевірені товари</small></span></div>
     <div>💳 <span><b>Зручна оплата</b><small>Безпечні покупки</small></span></div>
     <div>🎯 <span><b>Великий вибір</b><small>Для кожного гравця</small></span></div>
@@ -225,3 +236,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
