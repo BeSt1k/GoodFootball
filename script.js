@@ -1,4 +1,3 @@
-
 let cart = [];
 
 const cartCount = document.getElementById("cart-count");
@@ -69,3 +68,4 @@ function showAll() {
         product.style.display = "";
     });
 }
+
